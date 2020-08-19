@@ -1,4 +1,4 @@
-package com.icelabs.codesnippets.util.network;
+package com.icelabs.codesnippets.util;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
