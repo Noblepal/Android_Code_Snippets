@@ -1,9 +1,11 @@
-package com.icelabs.codesnippets.activity;
+package com.icelabs.codesnippets.room;
 
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.MenuItem;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -11,7 +13,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.icelabs.codesnippets.R;
 import com.icelabs.codesnippets.adapter.UserAdapter;
 import com.icelabs.codesnippets.databinding.ActivityRoomBinding;
-import com.icelabs.codesnippets.room.AppDatabase;
 import com.icelabs.codesnippets.room.model.User;
 import com.icelabs.codesnippets.util.AppExecutors;
 
@@ -30,6 +31,10 @@ public class RoomActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         b = DataBindingUtil.setContentView(this, R.layout.activity_room);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Room Database Example");
+        getSupportActionBar().setSubtitle("simple user store example");
 
         appDatabase = AppDatabase.getInstance(this);
         appExecutors = AppExecutors.getInstance();
@@ -81,5 +86,13 @@ public class RoomActivity extends AppCompatActivity {
                 });
             });
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
