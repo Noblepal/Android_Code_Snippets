@@ -1,4 +1,4 @@
-package com.icelabs.codesnippets;
+package com.icelabs.codesnippets.base;
 
 import android.app.Application;
 import android.content.Context;

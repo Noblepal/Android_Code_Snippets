@@ -6,7 +6,7 @@ import android.net.Network;
 import android.net.NetworkInfo;
 import android.util.Log;
 
-import com.icelabs.codesnippets.MainApplication;
+import com.icelabs.codesnippets.base.MainApplication;
 
 import java.io.IOException;
 
