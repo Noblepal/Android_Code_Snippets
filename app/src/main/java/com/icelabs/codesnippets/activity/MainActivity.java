@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         b.btnRoom.setOnClickListener(v -> startActivity(new Intent(this, RoomActivity.class)));
         b.btnMVVM.setOnClickListener(v -> startActivity(new Intent(this, MvvmActivity.class)));
+        b.btnOnlineStatus.setOnClickListener(v -> startActivity(new Intent(this, CheckOnlineStatusActivity.class)));
 
     }
 
